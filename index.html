@@ -1,0 +1,117 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Products</title>
+
+    <link href="./css/bootstrap.css" rel="stylesheet">
+    <link href="./css/bootstrap.css" rel="stylesheet">
+    <link href="./css/products.css" rel="stylesheet">
+  </head>
+
+  <body>
+    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#">Продукты</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3">
+          <div id="tree"></div>
+        </div>
+  	
+  		<div class="col-md-9">
+  			<table class="table table-hover">
+        		<thead>
+          			<tr>
+            			<th>Наименование</th>
+            			<th>Магнит</th>
+            			<th>Пятерочка</th>
+            			<th>Рынок</th>
+          			</tr>
+        		</thead>
+        		<tbody>
+          			<tr>
+            			<td>Черный хлеб литегский</td>
+            			<td class="min-cost">10р.</td>
+            			<td class="max-cost">15р.</td>
+            			<td>13р.</td>
+          			</tr>
+         			  <tr>
+            			<td>Черный хлеб бородинский</td>
+            			<td class="min-cost">14р.</td>
+            			<td>18р.</td>
+            			<td class="max-cost">19р.</td>
+          			</tr>
+                <tr>
+                  <td>Батон нарезной</td>
+                  <td class="min-cost">17р.</td>
+                  <td>18р.</td>
+                  <td class="max-cost">20р.</td>
+                </tr>
+          		</tbody>
+      		</table>
+  		</div>
+
+      </div>
+
+    </div><!-- /.container -->
+
+    <script src="./js/jquery-2.0.3.mix.js"></script>
+    <script src="./js/bootstrap.min.js"></script>
+    <script src="./js/bootstrap-treeview.min.js"></script>
+    
+
+    <script type="text/javascript">
+      function getTree() {
+var tree = [
+  {
+    text: "Хлебобулочные изделия",
+    nodes: [
+      {
+        text: "Хлеб",
+        nodes: [
+          {
+            text: "Черный хлеб"
+          },
+          {
+            text: "Белый хлеб"
+          }
+        ]
+      },
+      {
+        text: "Пирожки"
+      }
+    ]
+  },
+  {
+    text: "Молочные изделия",
+  },
+  {
+    text: "Мясное"
+  },
+  {
+    text: "Шоколад"
+  },
+  {
+    text: "Крупы"
+  }
+];
+        return tree;
+      }
+
+      $('#tree').treeview({data: getTree()});
+    </script>
+
+
+  </body>
+</html>
+

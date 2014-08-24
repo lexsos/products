@@ -1,0 +1,12 @@
+body {
+  padding-top: 50px;
+}
+
+.min-cost {
+	color: green;
+	font-weight: bold;
+}
+
+.max-cost {
+	color: red;
+}
