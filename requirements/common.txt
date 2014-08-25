@@ -1,0 +1,11 @@
+Django==1.5.4
+django-admin-tools
+south==0.8.2
+pil==1.1.7
+easy-thumbnails==1.2
+django-tinymce==1.5.1
+six==1.6.1
+django-mptt==0.6.1
+
+-e git://github.com/andreyfedoseev/django-static-precompiler.git#egg=django-static-precompiler
+-e git://github.com/lexsos/django-mixin.git#egg=django-mixin
