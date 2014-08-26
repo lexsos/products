@@ -43,7 +43,7 @@ class Shop(models.Model):
         max_length=255,
     )
     address = models.CharField(
-        _('title'),
+        _('address'),
         max_length=255,
     )
     weight = models.PositiveIntegerField(

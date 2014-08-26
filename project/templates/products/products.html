@@ -27,37 +27,8 @@
           <div id="tree"></div>
         </div>
 
-      <div class="col-md-9">
-        <table class="table table-hover">
-            <thead>
-              <tr>
-                <th>Наименование</th>
-                  <th>Магнит</th>
-                  <th>Пятерочка</th>
-                  <th>Рынок</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>Черный хлеб литегский</td>
-                <td class="min-cost">10р.</td>
-                <td class="max-cost">15р.</td>
-                <td>13р.</td>
-              </tr>
-              <tr>
-                <td>Черный хлеб бородинский</td>
-                <td class="min-cost">14р.</td>
-                <td>18р.</td>
-                <td class="max-cost">19р.</td>
-              </tr>
-              <tr>
-                <td>Батон нарезной</td>
-                <td class="min-cost">17р.</td>
-                <td>18р.</td>
-                <td class="max-cost">20р.</td>
-              </tr>
-            </tbody>
-        </table>
+      <div class="col-md-9" id="compare_div">
+        <h3> Выберите интересующую Вас категорию товаров </h3>
       </div>
 
       </div>
@@ -73,7 +44,7 @@
 
         json_data = $.ajax({
           type: "GET",
-          url: '/products/',
+          url: '{{ ajax_tree }}',
           async: false
         }).responseText;
 
@@ -83,7 +54,7 @@
 
       $('#tree').treeview({data: getTree()});
       $('#tree').on('nodeSelected', function(event, node) {
-        //alert(node.id);
+        $('#compare_div').load(node.url);
       });
     </script>
 

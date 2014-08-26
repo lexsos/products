@@ -10,9 +10,9 @@ urlpatterns = patterns('',
     url(r'^admin/', include(admin.site.urls)),
     url(r'^admin_tools/', include('admin_tools.urls')),
     url(r'^tinymce/', include('tinymce.urls')),
-    url(r'^products/', include('products.urls')),
+    url(r'^', include('products.urls')),
 
-    url(r'^tmpl/(.*)$', 'django.shortcuts.render')
+    #url(r'^tmpl/(.*)$', 'django.shortcuts.render')
 )
 
 if settings.DEBUG:
