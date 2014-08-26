@@ -3,10 +3,15 @@ body {
 }
 
 .min-cost {
-	color: green;
-	font-weight: bold;
+  color: green;
+  font-weight: bold;
 }
 
 .max-cost {
-	color: red;
+  color: red;
+}
+
+.shop-address {
+  font-weight: normal;
+  font-size: 10px;
 }
