@@ -50,14 +50,26 @@ def getProductsCompare(category, shop_list):
         for shop in shop_list:
             cost = Cost.objects.filter(product=product, shop=shop)
             if cost:
-                price = cost[0].price
-                item['by_shop'].append(price)
-                if price > item['max'] or not item['max']:
-                    item['max'] = price
-                if price < item['min'] or not item['min']:
-                    item['min'] = price
+                shop_cost = {}
+                shop_cost['min'] = False
+                shop_cost['max'] = False
+                shop_cost['price'] = cost[0].price
+                item['by_shop'].append(shop_cost)
+
+                if item['min'] is None:
+                    item['min'] = shop_cost
+                    item['max'] = shop_cost
+
+                if item['min']['price'] < shop_cost['price']:
+                    item['min'] = shop_cost
+                if item['max']['price'] > shop_cost['price']:
+                    item['min'] = shop_cost
             else:
                 item['by_shop'].append(None)
-        compare_table.append(item)
 
+        if item['min'] and item['max'] and not (item['min'] is item['max']):
+            item['min']['min'] = True
+            item['max']['max'] = True
+
+        compare_table.append(item)
     return compare_table

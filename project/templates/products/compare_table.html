@@ -17,16 +17,16 @@
     {% for product in compare_list %}
         <tr>
             <td>{{ product.title }}</td>
-            <td class="min-cost">{{ product.min }}</td>
-            <td class="max-cost">{{ product.max }}</td>
+            <td class="min-cost">{{ product.min.price }}</td>
+            <td class="max-cost">{{ product.max.price }}</td>
             {% for price in product.by_shop %}
-                <td>
-                    {% if price %}
-                      {{ price }}
-                    {% else %}
-                      -
-                    {% endif %}
+              {% if price %}
+                <td class="{% if price.max %}max-cost{% endif %} {% if price.min %}min-cost{% endif %}">
+                  {{ price.price }}
                 </td>
+              {% else %}
+                <td></td>
+              {% endif %}
             {% endfor %}
         </tr>
     {% endfor %}

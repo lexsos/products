@@ -30,7 +30,7 @@ class Category(models.Model):
     class Meta:
         verbose_name = _(u'category item')
         verbose_name_plural = _(u'category items')
-        ordering = ['weight', 'title']
+        ordering = ['-weight', 'title']
 
     def __unicode__(self):
         return self.title
@@ -60,7 +60,7 @@ class Shop(models.Model):
     class Meta:
         verbose_name = _(u'shop item')
         verbose_name_plural = _(u'shop items')
-        ordering = ['weight', 'title']
+        ordering = ['-weight', 'title']
 
     def __unicode__(self):
         return self.title
@@ -90,7 +90,7 @@ class Product(models.Model):
     class Meta:
         verbose_name = _(u'product item')
         verbose_name_plural = _(u'product items')
-        ordering = ['weight', 'title']
+        ordering = ['-weight', 'title']
 
     def __unicode__(self):
         return self.title
