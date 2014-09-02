@@ -1,30 +1,30 @@
 $ = jQuery
 $(document).ready =>
 
-    ajax_tree_url = '/ajax/tree/'
-    ajax_edit_tree_url = '/ajax/edit_tree/'
 
-    getTree = (url) ->
-        req =
-            type: "GET"
-            url: url
-            async: false
-        json_data = $.ajax(req).responseText
-        data_obj = $.parseJSON(json_data)
-        data_obj
+    Dajaxice.products.get_tree (data) ->
+        $('#tree').treeview
+            data: data
+        $('#edit_tree').treeview
+            data: data
 
-    $('#tree').treeview
-        data: getTree(ajax_tree_url)
+
     $('#tree').on 'nodeSelected', (event, node) ->
-        $('#compare_div').load(node.url)
+        params =
+            category_pk: node.category_pk
+        callback = (data) ->
+            $('#compare_div').html(data.body)
+        Dajaxice.products.get_compare_table(callback, params)
 
 
-    $('#edit_tree').treeview
-        data: getTree(ajax_edit_tree_url)
     $('#edit_tree').on 'nodeSelected', (event, node) ->
-        $('#edit_div').load node.url, ->
+        params =
+            category_pk: node.category_pk
+        callback = (data) ->
+            $('#edit_div').html(data.body)
             $('.price_edit').change ->
                 $(this).attr('edited', 'True')
+        Dajaxice.products.get_edit_table(callback, params)
 
 
     $('#save_btn').click ->
@@ -32,4 +32,12 @@ $(document).ready =>
             edit_ctl = $(this)
             if edit_ctl.attr('edited') == 'True'
                 edit_ctl.attr('edited', 'False')
+                params =
+                    price: edit_ctl.val()
+                    product_pk: edit_ctl.attr('product_pk')
+                    shop_pk: edit_ctl.attr('shop_pk')
+                callback = (data) ->
+                    data
+                Dajaxice.products.set_price(callback, params)
+
         alert('All saved')

@@ -1,4 +1,4 @@
-{% load coffeescript %}
+{% load coffeescript dajaxice_templatetags %}
 
 <!DOCTYPE html>
 <html lang="ru">
@@ -12,6 +12,7 @@
     <link href="{{STATIC_URL}}css/bootstrap.css" rel="stylesheet">
     <link href="{{STATIC_URL}}css/bootstrap.css" rel="stylesheet">
     <link href="{{STATIC_URL}}css/products.css" rel="stylesheet">
+
   </head>
 
   <body>
@@ -30,7 +31,8 @@
     <script src="{{STATIC_URL}}js/jquery-2.0.3.mix.js"></script>
     <script src="{{STATIC_URL}}js/bootstrap.min.js"></script>
     <script src="{{STATIC_URL}}js/bootstrap-treeview.min.js"></script>
+    {% dajaxice_js_import %}
     <script type="text/javascript" src="{{ STATIC_URL}}{% coffeescript "js/products.coffee" %}"></script>
+
   </body>
 </html>
-

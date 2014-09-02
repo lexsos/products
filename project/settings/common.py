@@ -51,6 +51,7 @@ STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
 #    'django.contrib.staticfiles.finders.DefaultStorageFinder',
     'static_precompiler.finders.StaticPrecompilerFinder',
+    'dajaxice.finders.DajaxiceFinder',
 )
 
 # Make this unique, and don't share it with anybody.
@@ -60,7 +61,7 @@ SECRET_KEY = '_6_8%3_#i+di=a5z0gdh_eke%u^oa=f=#ik@px^h&9yp1xqur1'
 TEMPLATE_LOADERS = (
     'django.template.loaders.filesystem.Loader',
     'django.template.loaders.app_directories.Loader',
-#     'django.template.loaders.eggs.Loader',
+    'django.template.loaders.eggs.Loader',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -114,6 +115,7 @@ INSTALLED_APPS = (
     'static_precompiler',
     'tinymce',
     'mptt',
+    'dajaxice',
 ) + PROJECT_APPS
 
 SESSION_SERIALIZER = 'django.contrib.sessions.serializers.JSONSerializer'

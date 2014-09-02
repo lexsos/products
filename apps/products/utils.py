@@ -1,18 +1,17 @@
 import json
-from django.core.urlresolvers import reverse
 
 from .models import Category, Product, Cost
 
 
-def getCategoryTree(url_name, parent=None, tree_node=None):
+def getCategoryTree(parent=None, tree_node=None):
     if parent is None:
         tree = []
         for item in Category.objects.filter(parent__isnull=True):
             new_item = {
                 'text': item.title,
-                'url':  reverse(url_name, kwargs={'pk': item.pk}),
+                'category_pk': item.pk,
             }
-            getCategoryTree(url_name, item, new_item)
+            getCategoryTree(item, new_item)
             tree.append(new_item)
         return tree
     else:
@@ -20,16 +19,16 @@ def getCategoryTree(url_name, parent=None, tree_node=None):
         for item in Category.objects.filter(parent=parent):
             new_item = {
                 'text': item.title,
-                'url':  reverse(url_name, kwargs={'pk': item.pk}),
+                'category_pk': item.pk,
             }
-            getCategoryTree(url_name, item, new_item)
+            getCategoryTree(item, new_item)
             new_nodes.append(new_item)
         if new_nodes:
             tree_node['nodes'] = new_nodes
 
 
-def getCategoryJson(url_name):
-    tree = getCategoryTree(url_name)
+def getCategoryJson():
+    tree = getCategoryTree()
     return json.dumps(tree)
 
 
