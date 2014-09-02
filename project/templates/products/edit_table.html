@@ -2,8 +2,6 @@
   <thead>
     <tr>
       <th> Товар </th>
-      <th> Min </th>
-      <th> Max </th>
       {% for shop in shop_list %}
         <th>
           {{ shop.title }}
@@ -17,16 +15,17 @@
     {% for product in compare_list %}
         <tr>
             <td>{{ product.title }}</td>
-            <td>{{ product.min.price }}</td>
-            <td>{{ product.max.price }}</td>
             {% for price in product.by_shop %}
-              {% if price.price %}
-                <td class="{% if price.max %}max-cost{% endif %} {% if price.min %}min-cost{% endif %}">
-                  {{ price.price }}
+                <td>
+                  <input
+                    type="text"
+                    class="form-control price_edit"
+                    value="{% if price.price %}{{ price.price }}{% endif %}"
+                    product_pk="{{ price.product_pk }}"
+                    shop_pk="{{ price.shop_pk }}"
+                    edited="False"
+                  >
                 </td>
-              {% else %}
-                <td></td>
-              {% endif %}
             {% endfor %}
         </tr>
     {% endfor %}

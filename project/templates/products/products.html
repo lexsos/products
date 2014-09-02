@@ -1,63 +1,9 @@
-<!DOCTYPE html>
-<html lang="ru">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+{% extends "products/base.html" %}
 
-    <title>Products</title>
 
-    <link href="{{STATIC_URL}}css/bootstrap.css" rel="stylesheet">
-    <link href="{{STATIC_URL}}css/bootstrap.css" rel="stylesheet">
-    <link href="{{STATIC_URL}}css/products.css" rel="stylesheet">
-  </head>
-
-  <body>
-    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-      <div class="container">
-        <div class="navbar-header">
-          <a class="navbar-brand" href="/">Продукты</a>
-        </div>
-      </div>
-    </div>
-
-    <div class="container">
-      <div class="row">
-        <div class="col-md-3">
-          <div id="tree"></div>
-        </div>
-
-      <div class="col-md-9" id="compare_div">
-        <h3> Выберите интересующую Вас категорию товаров </h3>
-      </div>
-
-      </div>
-
-    </div><!-- /.container -->
-
-    <script src="{{STATIC_URL}}js/jquery-2.0.3.mix.js"></script>
-    <script src="{{STATIC_URL}}js/bootstrap.min.js"></script>
-    <script src="{{STATIC_URL}}js/bootstrap-treeview.min.js"></script>
-
-    <script type="text/javascript">
-      function getTree() {
-
-        json_data = $.ajax({
-          type: "GET",
-          url: '{{ ajax_tree }}',
-          async: false
-        }).responseText;
-
-        data_obj = $.parseJSON(json_data);
-        return data_obj;
-      }
-
-      $('#tree').treeview({data: getTree()});
-      $('#tree').on('nodeSelected', function(event, node) {
-        $('#compare_div').load(node.url);
-      });
-    </script>
-
-  </body>
-</html>
-
+{% block main_content %}
+  <div class="row">
+    <div class="col-md-3"><div id="tree"></div></div>
+    <div class="col-md-9" id="compare_div"><h3> Выберите интересующую Вас категорию товаров </h3></div>
+  </div>
+{% endblock %}

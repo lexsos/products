@@ -4,15 +4,15 @@ from django.core.urlresolvers import reverse
 from .models import Category, Product, Cost
 
 
-def getCategoryTree(parent=None, tree_node=None):
+def getCategoryTree(url_name, parent=None, tree_node=None):
     if parent is None:
         tree = []
         for item in Category.objects.filter(parent__isnull=True):
             new_item = {
                 'text': item.title,
-                'url':  reverse('products_table', kwargs={'pk': item.pk}),
+                'url':  reverse(url_name, kwargs={'pk': item.pk}),
             }
-            getCategoryTree(item, new_item)
+            getCategoryTree(url_name, item, new_item)
             tree.append(new_item)
         return tree
     else:
@@ -20,16 +20,16 @@ def getCategoryTree(parent=None, tree_node=None):
         for item in Category.objects.filter(parent=parent):
             new_item = {
                 'text': item.title,
-                'url':  reverse('products_table', kwargs={'pk': item.pk}),
+                'url':  reverse(url_name, kwargs={'pk': item.pk}),
             }
-            getCategoryTree(item, new_item)
+            getCategoryTree(url_name, item, new_item)
             new_nodes.append(new_item)
         if new_nodes:
             tree_node['nodes'] = new_nodes
 
 
-def getCategoryJson():
-    tree = getCategoryTree()
+def getCategoryJson(url_name):
+    tree = getCategoryTree(url_name)
     return json.dumps(tree)
 
 
@@ -49,12 +49,15 @@ def getProductsCompare(category, shop_list):
         item['by_shop'] = []
         for shop in shop_list:
             cost = Cost.objects.filter(product=product, shop=shop)
+            shop_cost = {}
+            shop_cost['shop_pk'] = shop.pk
+            shop_cost['product_pk'] = product.pk
+            shop_cost['price'] = None
+            shop_cost['min'] = False
+            shop_cost['max'] = False
+            item['by_shop'].append(shop_cost)
             if cost:
-                shop_cost = {}
-                shop_cost['min'] = False
-                shop_cost['max'] = False
                 shop_cost['price'] = cost[0].price
-                item['by_shop'].append(shop_cost)
 
                 if item['min'] is None:
                     item['min'] = shop_cost
@@ -64,8 +67,6 @@ def getProductsCompare(category, shop_list):
                     item['min'] = shop_cost
                 if item['max']['price'] > shop_cost['price']:
                     item['min'] = shop_cost
-            else:
-                item['by_shop'].append(None)
 
         if item['min'] and item['max'] and not (item['min'] is item['max']):
             item['min']['min'] = True

@@ -9,7 +9,14 @@ from .models import Category, Shop
 
 def category_tree(request):
     return HttpResponse(
-        getCategoryJson(),
+        getCategoryJson('products_table'),
+        content_type='application/json',
+    )
+
+
+def category_edit_tree(request):
+    return HttpResponse(
+        getCategoryJson('products_edit_table'),
         content_type='application/json',
     )
 
@@ -31,6 +38,25 @@ class CompareTableView(DetailView):
 
     def get_context_data(self, **kwargs):
         context = super(CompareTableView, self).get_context_data(**kwargs)
+        shop_list = Shop.objects.filter(enabled=True)
+        category = context['category']
+
+        context['shop_list'] = shop_list
+        context['compare_list'] = getProductsCompare(category, shop_list)
+        return context
+
+
+class EditView(TemplateView):
+    template_name = 'products/edit.html'
+
+
+class EditTableView(DetailView):
+
+    template_name = 'products/edit_table.html'
+    model = Category
+
+    def get_context_data(self, **kwargs):
+        context = super(EditTableView, self).get_context_data(**kwargs)
         shop_list = Shop.objects.filter(enabled=True)
         category = context['category']
 

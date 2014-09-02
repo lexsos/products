@@ -1,0 +1,36 @@
+{% load coffeescript %}
+
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Products</title>
+
+    <link href="{{STATIC_URL}}css/bootstrap.css" rel="stylesheet">
+    <link href="{{STATIC_URL}}css/bootstrap.css" rel="stylesheet">
+    <link href="{{STATIC_URL}}css/products.css" rel="stylesheet">
+  </head>
+
+  <body>
+    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="/">Продукты</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      {% block main_content %}{% endblock %}
+    </div>
+
+    <script src="{{STATIC_URL}}js/jquery-2.0.3.mix.js"></script>
+    <script src="{{STATIC_URL}}js/bootstrap.min.js"></script>
+    <script src="{{STATIC_URL}}js/bootstrap-treeview.min.js"></script>
+    <script type="text/javascript" src="{{ STATIC_URL}}{% coffeescript "js/products.coffee" %}"></script>
+  </body>
+</html>
+
