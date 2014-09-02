@@ -62,10 +62,10 @@ def getProductsCompare(category, shop_list):
                     item['min'] = shop_cost
                     item['max'] = shop_cost
 
-                if item['min']['price'] < shop_cost['price']:
+                if item['min']['price'] > shop_cost['price']:
                     item['min'] = shop_cost
-                if item['max']['price'] > shop_cost['price']:
-                    item['min'] = shop_cost
+                if item['max']['price'] < shop_cost['price']:
+                    item['max'] = shop_cost
 
         if item['min'] and item['max'] and not (item['min'] is item['max']):
             item['min']['min'] = True
