@@ -15,3 +15,23 @@ body {
   font-weight: normal;
   font-size: 10px;
 }
+
+.table > thead > tr > th {
+    vertical-align: top;
+}
+
+.right-border-strong {
+    border-right-style: solid;
+    border-right-width: 2px;
+    border-right-color: black;
+}
+
+.cell-border {
+    border-style: solid;
+    border-width: 1px;
+    border-color: #DDDDDD;
+}
+
+.mix-max {
+    background-color: #EFEFEF;
+}
