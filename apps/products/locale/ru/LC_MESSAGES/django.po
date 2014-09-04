@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-09-02 13:10+0400\n"
+"POT-Creation-Date: 2014-09-04 07:37+0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -23,27 +23,27 @@ msgstr ""
 msgid "parent"
 msgstr "родитель"
 
-#: models.py:16 models.py:42 models.py:72
+#: models.py:16 models.py:42 models.py:76
 msgid "title"
 msgstr "заголовок"
 
-#: models.py:20 models.py:50 models.py:80
+#: models.py:20 models.py:50 models.py:84
 msgid "weight"
 msgstr "вес"
 
-#: models.py:22 models.py:52 models.py:82
+#: models.py:22 models.py:52 models.py:86
 msgid "Rocord will be first with greate weight."
 msgstr "Запись с большим весом будет первой"
 
-#: models.py:25 models.py:55 models.py:85
+#: models.py:25 models.py:55 models.py:89
 msgid "enabled"
 msgstr "включено"
 
-#: models.py:27 models.py:57 models.py:87
+#: models.py:27 models.py:57 models.py:91
 msgid "show/hide"
 msgstr "показать/скрыть"
 
-#: models.py:31 models.py:77
+#: models.py:31 models.py:81
 msgid "category item"
 msgstr "категория"
 
@@ -55,30 +55,34 @@ msgstr "категории"
 msgid "address"
 msgstr "адрес"
 
-#: models.py:61 models.py:107
+#: models.py:60
+msgid "additional info"
+msgstr "добавочная информация"
+
+#: models.py:65 models.py:111
 msgid "shop item"
 msgstr "магазин"
 
-#: models.py:62
+#: models.py:66
 msgid "shop items"
 msgstr "магазины"
 
-#: models.py:91 models.py:103
+#: models.py:95 models.py:107
 msgid "product item"
 msgstr "продукт"
 
-#: models.py:92
+#: models.py:96
 msgid "product items"
 msgstr "продукты"
 
-#: models.py:110
+#: models.py:114
 msgid "price"
 msgstr "цена"
 
-#: models.py:114
+#: models.py:118
 msgid "cost item"
 msgstr "цена"
 
-#: models.py:115
+#: models.py:119
 msgid "cost items"
 msgstr "цены"

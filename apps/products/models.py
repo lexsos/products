@@ -56,6 +56,10 @@ class Shop(models.Model):
         default=True,
         help_text=_('show/hide'),
     )
+    additional = models.TextField(
+        verbose_name=_('additional info'),
+        blank=True,
+    )
 
     class Meta:
         verbose_name = _(u'shop item')

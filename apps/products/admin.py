@@ -9,7 +9,7 @@ class CategoryAdmin(MPTTModelAdmin):
 
 
 class ShopAdmin(admin.ModelAdmin):
-    list_display = ('title', 'address', 'weight', 'enabled')
+    list_display = ('title', 'address', 'additional', 'weight', 'enabled')
 
 
 class ProductAdmin(admin.ModelAdmin):
