@@ -1,11 +1,11 @@
 <table class="table table-hover">
   <thead>
     <tr>
-      <th> Товар </th>
-      <th> Min </th>
-      <th> Max </th>
+      <th class="cell-border"> Товар </th>
+      <th class="cell-border"> Min </th>
+      <th class="cell-border"> Max </th>
       {% for shop in shop_list %}
-        <th>
+        <th class="cell-border">
           {{ shop.title }}
           <br>
           <span class="shop-address">{{ shop.address }}</span>

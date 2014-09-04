@@ -5,10 +5,12 @@ body {
 .min-cost {
   color: green;
   font-weight: bold;
+  background-color: #EEEEEE;
 }
 
 .max-cost {
   color: red;
+  background-color: #EEEEEE;
 }
 
 .shop-address {
