@@ -1,0 +1,95 @@
+body {
+    background-color: #FFFFFF;
+
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 14px;
+    line-height: 1.42857;
+
+    margin: 0;
+    padding-top: 50px;
+}
+
+.nav-bar {
+    min-height: 50px;
+    background-color: #F8F8F8;
+    border-bottom: 1px solid #E7E7E7;
+
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    right: 0;
+    left: 0;
+}
+
+
+/* Start layout style */
+
+.layout {
+    position: relative;
+}
+
+.layout DIV {
+    position: absolute;
+}
+
+.left-container {
+    width: 200px;
+}
+
+.midle-container {
+    left: 200px;
+    right: 0;
+}
+
+/* End layout style */
+
+/* Start references */
+
+.navbar-brand {
+    text-decoration: none;
+    color: #777777;
+    font-size: 18px;
+
+    padding: 10px;
+    display: inline-block;
+}
+
+.navbar-ref {
+    text-decoration: none;
+    color: #777777;
+    font-size: 14px;
+    line-height: 30px;
+
+    padding: 10px;
+    display: inline-block;
+}
+
+.navbar-ref:hover {
+    color: #000000;
+}
+
+.navbar-active {
+    background-color: #E7E7E7;
+}
+
+.navbar-pad {
+    display: inline-block;
+    padding-left: 20px;
+    min-height: 10px;
+}
+
+.navbar-item {
+    display: inline-block;
+    position: relative;
+}
+
+.navbar-sub-menu-item {
+    display: block;
+    position: absolute;
+
+    border: 1px solid #E7E7E7;
+    padding: 10px;
+    left: -4px;
+}
+
+/* End references */

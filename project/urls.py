@@ -18,7 +18,7 @@ urlpatterns = patterns('',
     url(r'^$', include('core.urls')),
     url(r'^products/', include('products.urls')),
 
-    #url(r'^tmpl/(.*)$', 'django.shortcuts.render')
+    #url(r'^tmpl/(.*)$', 'django.shortcuts.render'),
     url(dajaxice_config.dajaxice_url, include('dajaxice.urls')),
 )
 
