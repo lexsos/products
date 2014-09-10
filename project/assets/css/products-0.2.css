@@ -133,15 +133,19 @@ body {
     background-color: red;
 }
 
-.tree-view .closed {
+.tree-view .collapsed {
     width: 10px;
     height: 10px;
     display: inline-block;
     background-color: black;
 }
 
-.tree-view .hided {
+.tree-view .hiden {
     display: none;
+}
+
+.tree-view .node-text {
+    padding-left: 10px;
 }
 
 /* End tree view */
