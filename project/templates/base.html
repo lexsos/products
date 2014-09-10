@@ -17,17 +17,13 @@
       <a class="nav-brand" href="http://ilas.ru/">На главную</a>
       <a class="nav-ref" href="#">Продукты</a>
       <a class="nav-ref nav-active" href="#">Настройки</a>
-
-
       <span class="nav-pad60 nav-right"></span>
-
       <div class="nav-item nav-right">
         <a class="nav-ref" href="#">Вход</a>
         <div class="nav-sub-menu-item sub-menu-form">
          fsdf sdf d
         </div>
       </div>
-
       <div class="nav-item nav-right">
         <a class="nav-ref" href="#">Регистрация</a>
         <div class="nav-sub-menu-item sub-menu-form reg-form">
@@ -38,32 +34,13 @@
     </div>
 
     <div class="layout">
-      <div class="left-container">
-        <ul class="tree-view">
-          <li>
-            <span class="expanded"></span>
-            <span class="text">Продукты</span>
-          </li>
-          <li class="">
-            <span class="ident"></span>
-            <span class="expanded"></span>
-            <span class="text">Молочные</span>
-          </li>
-          <li class="selected">
-            <span class="ident"></span>
-            <span class="ident"></span>
-            <span class="closed"></span>
-            <span class="text">Молоко</span>
-          </li>
-        </ul>
-      </div>
+      <div class="left-container"></div>
       <div class="midle-container"></div>
     </div>
 
     <script src="{{STATIC_URL}}js/jquery-2.0.3.mix.js"></script>
-    <script src="{{STATIC_URL}}js/bootstrap.min.js"></script>
-    <script src="{{STATIC_URL}}js/bootstrap-treeview.min.js"></script>
     {% dajaxice_js_import %}
+    <script type="text/javascript" src="{{ STATIC_URL}}{% coffeescript "js/tree-view.coffee" %}"></script>
     <script type="text/javascript" src="{{ STATIC_URL}}{% coffeescript "js/style.coffee" %}"></script>
     <script type="text/javascript" src="{{ STATIC_URL}}{% coffeescript "js/products.coffee" %}"></script>
   </body>

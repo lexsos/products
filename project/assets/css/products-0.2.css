@@ -130,7 +130,7 @@ body {
 }
 
 .tree-view li:hover {
-    border: 1px solid #CCCCCC;
+    border: 1px solid #000000;
 }
 
 .tree-view .ident {
@@ -142,17 +142,17 @@ body {
 }
 
 .tree-view .expanded {
-    width: 10px;
-    height: 10px;
+    width: 13px;
+    height: 13px;
     display: inline-block;
-    background-color: red;
+    background-image: url(../img/minus.png)
 }
 
 .tree-view .collapsed {
-    width: 10px;
-    height: 10px;
+    width: 13px;
+    height: 13px;
     display: inline-block;
-    background-color: black;
+    background-image: url(../img/pluse.png)
 }
 
 .tree-view .hiden {
