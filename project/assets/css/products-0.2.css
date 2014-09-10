@@ -102,8 +102,61 @@ body {
 
 /* End navbar */
 
+
 .reg-form {
     width: 200px;
     height: 300px;
     left: -50px;
 }
+
+
+/* Start tree view */
+
+.tree-view {
+    margin-left: 0;
+    padding-left: 10px;
+}
+
+.tree-view li {
+    list-style-type: none;
+    padding: 5px;
+    cursor: pointer;
+    border: 1px solid transparent;
+}
+
+.tree-view .selected {
+    background-color: #F8F8F8;
+    border: 1px solid #CCCCCC;
+}
+
+.tree-view li:hover {
+    border: 1px solid #CCCCCC;
+}
+
+.tree-view .ident {
+    margin-left: 20px;
+}
+
+.tree-view .text {
+    font-size: 14px;
+}
+
+.tree-view .expanded {
+    width: 10px;
+    height: 10px;
+    display: inline-block;
+    background-color: red;
+}
+
+.tree-view .closed {
+    width: 10px;
+    height: 10px;
+    display: inline-block;
+    background-color: black;
+}
+
+.tree-view .hided {
+    display: none;
+}
+
+/* End tree view */
