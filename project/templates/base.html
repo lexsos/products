@@ -13,25 +13,26 @@
 
   <body>
     <div class="nav-bar">
-      <span class="navbar-pad"></span>
-      <span class="navbar-pad"></span>
-      <span class="navbar-pad"></span>
-      <a class="navbar-brand" href="http://ilas.ru/">На главную</a>
-      <a class="navbar-ref" href="http://ilas.ru/">Продукты</a>
-      <a class="navbar-ref navbar-active" href="http://ilas.ru/">Настройки</a>
-      <span class="navbar-pad"></span>
-      <span class="navbar-pad"></span>
-      <span class="navbar-pad"></span>
-      <div class="navbar-item">
-        <a class="navbar-ref" href="http://ilas.ru/">Вход</a>
-        <div class="navbar-sub-menu-item">
+      <span class="nav-pad60"></span>
+      <a class="nav-brand" href="http://ilas.ru/">На главную</a>
+      <a class="nav-ref" href="#">Продукты</a>
+      <a class="nav-ref nav-active" href="#">Настройки</a>
+
+
+      <span class="nav-pad60 nav-right"></span>
+
+      <div class="nav-item nav-right">
+        <a class="nav-ref" href="#">Вход</a>
+        <div class="nav-sub-menu-item sub-menu-form">
          fsdf sdf d
         </div>
       </div>
-      <div class="navbar-item">
-        <a class="navbar-ref" href="http://ilas.ru/">Регистрация</a>
-        <div class="navbar-sub-menu-item">
+
+      <div class="nav-item nav-right">
+        <a class="nav-ref" href="#">Регистрация</a>
+        <div class="nav-sub-menu-item sub-menu-form reg-form">
          fsdf sdf d
+         <input></input>
         </div>
       </div>
     </div>
@@ -40,8 +41,8 @@
       <div class="left-container">
         <ul class="tree-view">
           <li>
-            <span class="expanded"></span>             
-            <span class="text">Продукты</span> 
+            <span class="expanded"></span>
+            <span class="text">Продукты</span>
           </li>
           <li class="">
             <span class="ident"></span>
@@ -63,6 +64,7 @@
     <script src="{{STATIC_URL}}js/bootstrap.min.js"></script>
     <script src="{{STATIC_URL}}js/bootstrap-treeview.min.js"></script>
     {% dajaxice_js_import %}
+    <script type="text/javascript" src="{{ STATIC_URL}}{% coffeescript "js/style.coffee" %}"></script>
     <script type="text/javascript" src="{{ STATIC_URL}}{% coffeescript "js/products.coffee" %}"></script>
   </body>
 </html>
