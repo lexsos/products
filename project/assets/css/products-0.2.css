@@ -24,7 +24,7 @@ body {
 }
 
 .midle-container {
-    left: 200px;
+    left: 210px;
     right: 0;
 }
 
@@ -164,3 +164,49 @@ body {
 }
 
 /* End tree view */
+
+/* Start compare table */
+
+.compare-table  {
+    border-spacing: 0;
+    border-collapse: collapse;
+    margin-top: 14px;
+}
+
+.compare-table  th {
+    border: 1px solid #E7E7E7;
+    background-color: #F8F8F8;
+    vertical-align: top;
+    padding: 10px;
+}
+
+.compare-table  td {
+    border: 1px solid #E7E7E7;
+    vertical-align: middle;
+    padding: 10px;
+}
+
+.compare-table .shop-address {
+    font-size: 10px;
+    font-weight: normal;
+}
+
+.compare-table .right-border-strong {
+    border-right: 1px solid black;
+}
+
+.compare-table .max-cost {
+    background-color: #D2B48C;
+    font-weight: bold;
+}
+
+.compare-table .min-cost {
+    background-color: #54FF9F;
+    font-weight: bold;   
+}
+
+.compare-table .fix-cell {
+    background-color: #F8F8F8;
+}
+
+/* End compare table */

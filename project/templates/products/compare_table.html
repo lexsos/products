@@ -1,4 +1,4 @@
-<table class="table table-hover">
+<table class="compare-table  table table-hover">
   <thead>
     <tr>
       <th class="cell-border"> Товар </th>
@@ -16,9 +16,9 @@
   <tbody>
     {% for product in compare_list %}
         <tr>
-            <td class="cell-border">{{ product.title }}</td>
-            <td class="cell-border mix-max">{{ product.min.price }}</td>
-            <td class="right-border-strong mix-max">{{ product.max.price }}</td>
+            <td class="fix-cell  cell-border">{{ product.title }}</td>
+            <td class="fix-cell  cell-border mix-max">{{ product.min.price }}</td>
+            <td class="fix-cell  right-border-strong mix-max">{{ product.max.price }}</td>
             {% for price in product.by_shop %}
               {% if price.price %}
                 <td class="{% if price.max %}max-cost{% endif %} {% if price.min %}min-cost{% endif %} cell-border">
