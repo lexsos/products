@@ -15,16 +15,17 @@ body {
     position: relative;
 }
 
-.layout DIV {
+.layout .left-container, .midle-container {
     position: absolute;
 }
 
 .left-container {
     width: 200px;
+    padding-left: 10px;
 }
 
 .midle-container {
-    left: 210px;
+    left: 220px;
     right: 0;
 }
 
@@ -112,9 +113,13 @@ body {
 
 /* Start tree view */
 
+.tree-filter {
+    padding-top: 10px;
+}
+
 .tree-view {
-    margin-left: 0;
-    padding-left: 10px;
+    padding: 0px;
+    margin: 0;
 }
 
 .tree-view li {
@@ -210,3 +215,33 @@ body {
 }
 
 /* End compare table */
+
+
+/* Start view mode selector */
+
+
+.view-mode {
+    padding-top: 20px;
+}
+/*
+.view-mode span {
+    cursor: pointer;
+    padding: 5px;
+    border: 1px solid #CCCCCC;
+    border-radius: 5px;
+    display: inline-block;
+    margin: 3px;
+}
+
+.view-mode span:hover {
+
+    border-color: black;
+}
+
+.view-mode .selected {
+    background-color: #F8F8F8;
+    border-color: black;
+}
+/*
+
+/* End view mode selector */
