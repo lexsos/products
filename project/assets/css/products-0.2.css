@@ -9,6 +9,15 @@ body {
     padding-top: 50px;
 }
 
+a {
+    color: #428bca;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
 /* Start layout style */
 
 .layout {
@@ -22,11 +31,13 @@ body {
 .left-container {
     width: 200px;
     padding-left: 10px;
+    padding-top: 15px;
 }
 
 .midle-container {
     left: 220px;
     right: 0;
+    padding-top: 15px;
 }
 
 /* End layout style */
@@ -175,7 +186,6 @@ body {
 .compare-table  {
     border-spacing: 0;
     border-collapse: collapse;
-    margin-top: 14px;
 }
 
 .compare-table  th {
@@ -201,12 +211,12 @@ body {
 }
 
 .compare-table .max-cost {
-    background-color: #D2B48C;
+    background-color: #d9534f;
     font-weight: bold;
 }
 
 .compare-table .min-cost {
-    background-color: #54FF9F;
+    background-color: #5cb85c;
     font-weight: bold;   
 }
 
@@ -217,10 +227,137 @@ body {
 /* End compare table */
 
 
-/* Start view mode selector */
+/* Start less compare */
 
-.view-mode {
-    padding-top: 20px;
+.less-compare {
+    min-width: 800px;
 }
 
-/* End view mode selector */
+.less-compare .header {
+    display: inline-block;
+    background-color: #F8F8F8;
+    border: 1px solid #E7E7E7;
+    padding: 10px;
+    text-align: center;
+    margin-right: -5px;
+}
+
+.less-compare .header-name {
+    width: 200px;
+
+}
+
+.less-compare .header-max {
+    width: 250px;
+
+}
+
+.less-compare .header-min {
+    width: 250px;
+}
+
+.less-compare .row {
+    display: inline-block;
+    border: 1px solid #E7E7E7;
+    border-top: none;
+    padding: 10px;
+    margin-right: -5px;
+}
+
+.less-compare .row-name {
+    width: 200px;
+    height: 35px;
+}
+
+.less-compare .row-min {
+    width: 250px;
+    background-color: #5cb85c;
+    height: 35px;
+}
+
+.less-compare .row-max {
+    width: 250px;
+    background-color: #d9534f;
+    height: 35px;
+}
+
+.less-compare .row .product {
+    display: inline-block;
+    vertical-align: top;
+}
+
+.less-compare .row .shop {
+    display: inline-block;
+    width: 200px;
+    vertical-align: top;
+}
+
+.less-compare .row .shop-name {
+    margin: 0;
+    padding: 0;
+}
+
+.less-compare .row .shop-address {
+    margin: 0;
+    padding: 0;
+    font-size: 10px;
+}
+
+.less-compare .row .cost {
+    display: inline-block;
+    vertical-align: middle;
+    font-weight: bold;
+}
+
+.less-compare .details {
+    padding: 10px;
+    width: 740px;
+    border: 1px solid #E7E7E7;
+    border-top: none;
+}
+
+.less-compare .details .shop-detail {
+    display: inline-block;
+    border: 1px solid #E7E7E7;
+    padding: 5px;
+    margin-bottom: 3px;
+}
+
+.less-compare .details .shop {
+    display: inline-block;
+    /* min-width: 100px; */
+    vertical-align: top;
+}
+
+
+.less-compare .details .cost {
+    display: inline-block;
+    font-weight: bold;
+}
+
+.less-compare .details .shop-name {
+    padding: 0;
+    margin: 0;
+}
+
+.less-compare .details .shop-address {
+    padding: 0;
+    margin: 0;
+    font-size: 10px;
+}
+
+.less-compare .details .product-name {
+    padding: 0;
+    margin: 0;
+    margin-bottom: 5px;
+}
+
+.less-compare .details .min {
+    background-color: #5cb85c;
+}
+
+.less-compare .details .max {
+    background-color: #d9534f;
+}
+
+/* End less compare */
