@@ -240,6 +240,7 @@ a:hover {
     padding: 10px;
     text-align: center;
     margin-right: -5px;
+    box-sizing: border-box;
 }
 
 .less-compare .header-name {
@@ -260,25 +261,24 @@ a:hover {
     display: inline-block;
     border: 1px solid #E7E7E7;
     border-top: none;
-    padding: 10px;
+    padding: 3px;
     margin-right: -5px;
+    box-sizing: border-box;
+    height: 40px;
 }
 
 .less-compare .row-name {
     width: 200px;
-    height: 35px;
 }
 
 .less-compare .row-min {
     width: 250px;
     background-color: #5cb85c;
-    height: 35px;
 }
 
 .less-compare .row-max {
     width: 250px;
     background-color: #d9534f;
-    height: 35px;
 }
 
 .less-compare .row .product {
@@ -288,7 +288,7 @@ a:hover {
 
 .less-compare .row .shop {
     display: inline-block;
-    width: 200px;
+    width: 190px;
     vertical-align: top;
 }
 
