@@ -1,0 +1,195 @@
+<div class="less-compare">
+          
+  <div>
+    <div class="header header-name">Наименование</div>
+    <div class="header header-min">Минимальная цена</div>
+    <div class="header header-max">Максимальная цена</div>
+  </div>
+
+  {% for product in product_list %}
+    <div>
+
+      <div class="row row-name">
+        <div class="product">
+          <p class="product-name">{{ product.title }}</p>
+          <p class="shop-address">
+            <a href="#" productpk="{{ product.pk }}" class="show-product-detail">Подробнее</a>
+          </p>
+        </div>
+      </div>
+
+      <div class="row row-min">
+        <div class="shop">
+          <p class="shop-name">{{ product.get_min_cost.shop.title }}</p>
+          <p class="shop-address">{{ product.get_min_cost.shop.address }}</p>
+        </div>
+        <div class="cost">{{ product.get_min_cost.price }}</div>
+      </div>
+
+      <div class="row row-max">
+        <div class="shop">
+          <p class="shop-name">{{ product.get_max_cost.shop.title }}</p>
+          <p class="shop-address">{{ product.get_max_cost.shop.address }}</p>
+        </div>
+        <div class="cost">{{ product.get_max_cost.price }}</div>
+      </div>
+
+      <div class="details-wrap"></div>
+
+    </div>
+  {% endfor %}
+
+</div>
+
+<!--
+          <div>
+
+            <div class="row row-name">
+              <div class="product">
+                <p class="shop-name">Батон нарезной</p>
+                <p class="shop-address"><a href="#">Подробнее</a></p>
+              </div>
+            </div>
+
+            <div class="row row-min">
+              <div class="shop">
+                <p class="shop-name">Магнит</p>
+                <p class="shop-address">Советская 10</p>
+              </div>
+              <div class="cost">12,50</div>
+            </div>
+
+            <div class="row row-max">
+              <div class="shop">
+                <p class="shop-name">Магнит</p>
+                <p class="shop-address">Советская 10</p>
+              </div>
+              <div class="cost">12,50</div>
+            </div>
+
+
+            <div class="details-wrap">
+            <div class="details">
+
+              <p class="product-name">Цены в магазинах на: Батон нарезной</p>
+
+              <div class="shop-detail min">
+                <div class="shop">
+                  <p class="shop-name">Магнит</p>
+                  <p class="shop-address">Советская 10</p>
+                </div>
+                <div class="cost">12,50</div>
+              </div>
+
+              <div class="shop-detail">
+                <div class="shop">
+                  <p class="shop-name">Магнит</p>
+                  <p class="shop-address">Советская 10</p>
+                </div>
+                <div class="cost">12,50</div>
+              </div>
+
+              <div class="shop-detail">
+                <div class="shop">
+                  <p class="shop-name">Магнит</p>
+                  <p class="shop-address">Советская 10</p>
+                </div>
+                <div class="cost">12,50</div>
+              </div>
+
+              <div class="shop-detail">
+                <div class="shop">
+                  <p class="shop-name">Магнит</p>
+                  <p class="shop-address">Советская 10</p>
+                </div>
+                <div class="cost">12,50</div>
+              </div>
+
+              <div class="shop-detail">
+                <div class="shop">
+                  <p class="shop-name">Магнит</p>
+                  <p class="shop-address">Советская 10</p>
+                </div>
+                <div class="cost">12,50</div>
+              </div>              
+
+              <div class="shop-detail">
+                <div class="shop">
+                  <p class="shop-name">Магнит</p>
+                  <p class="shop-address">Советская 10</p>
+                </div>
+                <div class="cost">12,50</div>
+              </div>
+
+              <div class="shop-detail max">
+                <div class="shop">
+                  <p class="shop-name">Магнит</p>
+                  <p class="shop-address">Советская 10</p>
+                </div>
+                <div class="cost">12,50</div>
+              </div>
+
+            </div>
+            </div>
+
+          </div>
+
+
+
+
+
+
+
+          <div>
+
+            <div class="row row-name">
+              <div class="product">
+                <p class="shop-name">Батон нарезной</p>
+                <p class="shop-address"><a href="#">Подробнее</a></p>
+              </div>
+            </div>
+
+            <div class="row row-min">
+              <div class="shop">
+                <p class="shop-name">Магнит</p>
+                <p class="shop-address">Советская 10</p>
+              </div>
+              <div class="cost">12,50</div>
+            </div>
+
+            <div class="row row-max">
+              <div class="shop">
+                <p class="shop-name">Магнит</p>
+                <p class="shop-address">Советская 10</p>
+              </div>
+              <div class="cost">12,50</div>
+            </div>
+
+
+            <div class="details-wrap">
+
+            <div class="details">
+
+              <div class="shop-detail">
+                <div class="shop">
+                  <p class="shop-name">Магнит</p>
+                  <p class="shop-address">Советская 10</p>
+                </div>
+                <div class="cost">12,50</div>
+              </div>
+
+              <div class="shop-detail">
+                <div class="shop">
+                  <p class="shop-name">Магнит</p>
+                  <p class="shop-address">Советская 10</p>
+                </div>
+                <div class="cost">12,50</div>
+              </div>
+
+            </div>
+            </div>
+
+          </div>
+
+        </div>
+-->

@@ -36,6 +36,16 @@ def get_less_compare(request, category_pk):
     return simplejson.dumps({'body': body})
 
 
+@dajaxice_register
+def get_less_detail(request, product_pk):
+    product = Product.objects.get(pk=product_pk)
+    context = {
+        'product': product,
+        'cost_list': product.cost_set.order_by('price'),
+    }
+    body = render_to_string('products/less_compare_detail.html', context)
+    return simplejson.dumps({'body': body})
+
 
 @dajaxice_register
 def get_edit_table(request, category_pk):

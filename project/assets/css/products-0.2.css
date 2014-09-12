@@ -286,6 +286,11 @@ a:hover {
     vertical-align: top;
 }
 
+.less-compare .row .product-name {
+    padding: 0;
+    margin: 0;
+}
+
 .less-compare .row .shop {
     display: inline-block;
     width: 190px;

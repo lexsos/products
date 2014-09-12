@@ -43,6 +43,15 @@ $(document).ready =>
         alert('All saved')
 
 
+    load_detail = (a_element) ->
+        wrap_div = a_element.parent().parent().parent().parent().find('.details-wrap')
+        params =
+            product_pk: a_element.attr('productpk')
+        callback = (data) ->
+                wrap_div.html(data.body)
+        Dajaxice.products.get_less_detail(callback, params)
+
+
     class CompareView
         constructor: (@container) ->
             @mode = "cmp-table"
@@ -65,6 +74,8 @@ $(document).ready =>
                category_pk: @category.category_pk
             callback = (data) =>
                 @container.html(data.body)
+                $('.show-product-detail').click ->
+                    load_detail($(this))
 
             if @mode is 'cmp-table'
                 Dajaxice.products.get_compare_table(callback, params)
@@ -72,7 +83,6 @@ $(document).ready =>
                 Dajaxice.products.get_edit_table(callback, params)
             if @mode is 'cmp-less'
                 Dajaxice.products.get_less_compare(callback, params)
-
 
 
     compare_view = new CompareView($('.midle-container'))
