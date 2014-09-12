@@ -70,6 +70,9 @@ $(document).ready =>
                 Dajaxice.products.get_compare_table(callback, params)
             if @mode is 'edit-table'
                 Dajaxice.products.get_edit_table(callback, params)
+            if @mode is 'cmp-less'
+                Dajaxice.products.get_less_compare(callback, params)
+
 
 
     compare_view = new CompareView($('.midle-container'))

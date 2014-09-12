@@ -26,6 +26,18 @@ def get_compare_table(request, category_pk):
 
 
 @dajaxice_register
+def get_less_compare(request, category_pk):
+    category = Category.objects.get(pk=category_pk)
+    product_list = category.get_products()
+    context = {
+        'product_list': product_list,
+    }
+    body = render_to_string('products/less_compare_list.html', context)
+    return simplejson.dumps({'body': body})
+
+
+
+@dajaxice_register
 def get_edit_table(request, category_pk):
     shop_list = Shop.objects.filter(enabled=True)
     category = Category.objects.get(pk=category_pk)

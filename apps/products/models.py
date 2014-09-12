@@ -35,6 +35,11 @@ class Category(models.Model):
     def __unicode__(self):
         return self.title
 
+    def get_products(self):
+        category_list = [item.pk for item in self.get_descendants()]
+        category_list.append(self.pk)
+        return Product.objects.filter(category__pk__in=category_list)
+
 
 class Shop(models.Model):
 
@@ -98,6 +103,18 @@ class Product(models.Model):
 
     def __unicode__(self):
         return self.title
+
+    def get_min_cost(self):
+        cost_list = self.cost_set.order_by('price')
+        if cost_list:
+            return cost_list[0]
+        return None
+
+    def get_max_cost(self):
+        cost_list = self.cost_set.order_by('-price')
+        if cost_list:
+            return cost_list[0]
+        return None
 
 
 class Cost(models.Model):
