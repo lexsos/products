@@ -257,9 +257,14 @@ a:hover {
     width: 250px;
 }
 
+.less-compare .row-wrap {
+    border: 1px solid #E7E7E7;
+    width: 698px;
+}
+
 .less-compare .row {
     display: inline-block;
-    border: 1px solid #E7E7E7;
+    /* border: 1px solid #E7E7E7; */
     border-top: none;
     padding: 3px;
     margin-right: -5px;
@@ -316,9 +321,10 @@ a:hover {
 
 .less-compare .details {
     padding: 10px;
-    width: 740px;
-    border: 1px solid #E7E7E7;
+    width: 690px;
+    /* border: 1px solid #E7E7E7; */
     border-top: none;
+    box-sizing: border-box;
 }
 
 .less-compare .details .shop-detail {
@@ -363,6 +369,10 @@ a:hover {
 
 .less-compare .details .max {
     background-color: #d9534f;
+}
+
+.less-compare .details .default {
+    background-color: #F8F8F8;
 }
 
 /* End less compare */
