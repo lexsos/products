@@ -44,12 +44,16 @@ $(document).ready =>
 
 
     load_detail = (a_element) ->
-        wrap_div = a_element.parent().parent().parent().parent().find('.details-wrap')
-        params =
-            product_pk: a_element.attr('productpk')
-        callback = (data) ->
-                wrap_div.html(data.body)
-        Dajaxice.products.get_less_detail(callback, params)
+        tr_id = a_element.attr('tr')
+        tr = $(tr_id)
+        tr.toggleClass('hide')
+        if not tr.hasClass('hide')
+            td = tr.find('td')
+            params =
+                product_pk: a_element.attr('productpk')
+            callback = (data) ->
+                    td.html(data.body)
+            Dajaxice.products.get_less_detail(callback, params)
 
 
     class CompareView

@@ -217,7 +217,7 @@ a:hover {
 
 .compare-table .min-cost {
     background-color: #5cb85c;
-    font-weight: bold;   
+    font-weight: bold;
 }
 
 .compare-table .fix-cell {
@@ -227,152 +227,75 @@ a:hover {
 /* End compare table */
 
 
-/* Start less compare */
+/* Start less compare tables */
 
-.less-compare {
-    min-width: 800px;
+.less-cmp-table {
+    width: 700px;
 }
 
-.less-compare .header {
-    display: inline-block;
+.less-cmp-table, .less-cmp-table th, .less-cmp-table td {
+    border: 1px solid #E7E7E7;
+    border-collapse: collapse;
+}
+
+.less-cmp-table th {
     background-color: #F8F8F8;
-    border: 1px solid #E7E7E7;
     padding: 10px;
-    text-align: center;
-    margin-right: -5px;
-    box-sizing: border-box;
+    font-weight: normal;
 }
 
-.less-compare .header-name {
-    width: 200px;
-
+.less-cmp-table td {
+    padding-left: 5px;
+    padding-right: 5px;
 }
 
-.less-compare .header-max {
-    width: 250px;
-
+.less-cmp-table .hide {
+    display: none;
 }
 
-.less-compare .header-min {
-    width: 250px;
+.less-cmp-table .product-name, .less-cmp-table .shop-address, .less-cmp-table .shop-name {
+    margin: 0;
+    padding: 0;
 }
 
-.less-compare .row-wrap {
-    border: 1px solid #E7E7E7;
-    width: 698px;
+.less-cmp-table .shop-address {
+    font-size: 10px;
 }
 
-.less-compare .row {
+.less-cmp-table .shop, .less-cmp-table .cost, .less-cmp-table .shop-detail {
     display: inline-block;
-    /* border: 1px solid #E7E7E7; */
-    border-top: none;
-    padding: 3px;
-    margin-right: -5px;
-    box-sizing: border-box;
-    height: 40px;
 }
 
-.less-compare .row-name {
-    width: 200px;
+.less-cmp-table .cost {
+    font-weight: bold;
+    text-align: right;
 }
 
-.less-compare .row-min {
-    width: 250px;
+.less-cmp-table .list .cost {
+    width: 35%;
+}
+
+.less-cmp-table .list .shop {
+    width: 60%;
+}
+
+.less-cmp-table td > div, .less-cmp-table .shop-detail > div {
+    vertical-align:top;
+}
+
+.less-cmp-table .min {
     background-color: #5cb85c;
 }
 
-.less-compare .row-max {
-    width: 250px;
+.less-cmp-table .max {
     background-color: #d9534f;
 }
 
-.less-compare .row .product {
-    display: inline-block;
-    vertical-align: top;
-}
-
-.less-compare .row .product-name {
-    padding: 0;
-    margin: 0;
-}
-
-.less-compare .row .shop {
-    display: inline-block;
-    width: 190px;
-    vertical-align: top;
-}
-
-.less-compare .row .shop-name {
-    margin: 0;
-    padding: 0;
-}
-
-.less-compare .row .shop-address {
-    margin: 0;
-    padding: 0;
-    font-size: 10px;
-}
-
-.less-compare .row .cost {
-    display: inline-block;
-    vertical-align: middle;
-    font-weight: bold;
-}
-
-.less-compare .details {
-    padding: 10px;
-    width: 690px;
-    /* border: 1px solid #E7E7E7; */
-    border-top: none;
-    box-sizing: border-box;
-}
-
-.less-compare .details .shop-detail {
-    display: inline-block;
+.less-cmp-table .shop-detail {
     border: 1px solid #E7E7E7;
-    padding: 5px;
-    margin-bottom: 3px;
-}
-
-.less-compare .details .shop {
-    display: inline-block;
-    /* min-width: 100px; */
-    vertical-align: top;
-}
-
-
-.less-compare .details .cost {
-    display: inline-block;
-    font-weight: bold;
-}
-
-.less-compare .details .shop-name {
-    padding: 0;
-    margin: 0;
-}
-
-.less-compare .details .shop-address {
-    padding: 0;
-    margin: 0;
-    font-size: 10px;
-}
-
-.less-compare .details .product-name {
-    padding: 0;
-    margin: 0;
+    padding-right: 5px;
+    padding-left: 5px;
     margin-bottom: 5px;
 }
 
-.less-compare .details .min {
-    background-color: #5cb85c;
-}
-
-.less-compare .details .max {
-    background-color: #d9534f;
-}
-
-.less-compare .details .default {
-    background-color: #F8F8F8;
-}
-
-/* End less compare */
+/* End less compare tables */

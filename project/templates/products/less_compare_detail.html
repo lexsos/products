@@ -1,23 +1,22 @@
 <div class="details">
 
-	<p class="product-name">Цены в магазинах на: {{ product.title }}</p>
+    <p class="product-name">Цены в магазинах на: {{ product.title }}</p>
 
-	{% for cost in cost_list %}
+    {% for cost in cost_list %}
 
-	{% if forloop.first and not forloop.last %}
+    {% if forloop.first and not forloop.last %}
         <div class="shop-detail min">
     {% elif forloop.last and not forloop.first %}
-    	<div class="shop-detail max">
+        <div class="shop-detail max">
     {% else %}
-    	<div class="shop-detail default">
+        <div class="shop-detail">
     {% endif %}
-
             <div class="shop">
                 <p class="shop-name">{{ cost.shop.title }}</p>
                 <p class="shop-address">{{ cost.shop.address }}</p>
             </div>
             <div class="cost">{{ cost.price }}</div>
         </div>
-	{% endfor %}
+    {% endfor %}
 
 </div>
