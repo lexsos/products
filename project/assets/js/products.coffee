@@ -1,6 +1,9 @@
 $ = jQuery
 $(document).ready =>
 
+    Array::toDict = (key) ->
+        @reduce ((dict, obj) -> dict[ obj[key] ] = obj if obj[key]?; return dict), {}
+
 
     Dajaxice.products.get_tree (data) ->
         $('#tree').treeview
@@ -43,22 +46,79 @@ $(document).ready =>
         alert('All saved')
 
 
-    load_detail = (a_element) ->
-        tr_id = a_element.attr('tr')
-        tr = $(tr_id)
-        tr.toggleClass('hide')
-        if not tr.hasClass('hide')
-            td = tr.find('td')
+    class CategoryView
+        constructor: (@container) ->
+
+        ajax_function: (callback, params) ->
+
+        after_load: (self) ->
+
+        load_category: (category) ->
+            self = @
             params =
-                product_pk: a_element.attr('productpk')
+               category_pk: category.category_pk
             callback = (data) ->
-                    td.html(data.body)
-            Dajaxice.products.get_less_detail(callback, params)
+                self.container.html(data.body)
+                self.after_load(self)
+
+            @ajax_function(callback, params)
 
 
-    class CompareView
+    class CompareTableView extends CategoryView
+    
+        ajax_function: (callback, params) ->
+            Dajaxice.products.get_compare_table(callback, params)
+
+
+    class EditTableView extends CategoryView
+    
+        ajax_function: (callback, params) ->
+            Dajaxice.products.get_edit_table(callback, params)
+
+
+    class LessCompareView extends CategoryView
+
+        ajax_function: (callback, params) ->
+            Dajaxice.products.get_less_compare(callback, params)
+
+        after_load: (self) ->
+            $('.show-product-detail').click ->
+                a_element = $(this)
+                tr_id = a_element.attr('tr')
+                tr = $(tr_id)
+                tr.toggleClass('hide')
+                if not tr.hasClass('hide')
+                    td = tr.find('td')
+                    params =
+                        product_pk: a_element.attr('productpk')
+                    callback = (data) ->
+                        td.html(data.body)
+                    Dajaxice.products.get_less_detail(callback, params)
+
+
+    view_list = [
+        {
+            key: 'cmp-table'
+            cls: CompareTableView
+        },
+        {
+            key: 'edit-table'
+            cls: EditTableView
+        },
+        {
+            key: 'cmp-less'
+            cls: LessCompareView
+        },
+    ]
+
+
+    class ModeView
         constructor: (@container) ->
             @mode = "cmp-table"
+            view_arr = view_list.slice(0)
+            for view in view_arr
+                view.instans = new view.cls(@container)
+            @view_list = view_arr.toDict('key')
 
         select_mode: (mode) ->
             if mode isnt @mode
@@ -73,32 +133,19 @@ $(document).ready =>
         apply: ->
             if not @mode or not @category
                 return
-
-            params =
-               category_pk: @category.category_pk
-            callback = (data) =>
-                @container.html(data.body)
-                $('.show-product-detail').click ->
-                    load_detail($(this))
-
-            if @mode is 'cmp-table'
-                Dajaxice.products.get_compare_table(callback, params)
-            if @mode is 'edit-table'
-                Dajaxice.products.get_edit_table(callback, params)
-            if @mode is 'cmp-less'
-                Dajaxice.products.get_less_compare(callback, params)
+            @view_list[@mode].instans.load_category(@category)
 
 
-    compare_view = new CompareView($('.midle-container'))
+    mode_view = new ModeView($('.midle-container'))
 
 
     Dajaxice.products.get_tree (data) ->
         build_tree_view $('.tree-filter'), data, (item) ->
-            compare_view.select_category(item)
+            mode_view.select_category(item)
 
 
     $('#view-mode-select').change ->
-        compare_view.select_mode($(this).val())
+        mode_view.select_mode($(this).val())
 
 
     $(window).resize ->
