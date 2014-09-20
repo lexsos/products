@@ -83,17 +83,19 @@ $(document).ready =>
 
         after_load: (self) ->
             $('.show-product-detail').click ->
-                a_element = $(this)
-                tr_id = a_element.attr('tr')
-                tr = $(tr_id)
-                tr.toggleClass('hide')
-                if not tr.hasClass('hide')
-                    td = tr.find('td')
-                    params =
-                        product_pk: a_element.attr('productpk')
-                    callback = (data) ->
-                        td.html(data.body)
-                    Dajaxice.products.get_less_detail(callback, params)
+                self.detail_click(self, $(this))
+
+        detail_click: (self, a_element) ->
+            tr_id = a_element.attr('tr')
+            tr = $(tr_id)
+            tr.toggleClass('hide')
+            if not tr.hasClass('hide')
+                td = tr.find('td')
+                params =
+                    product_pk: a_element.attr('productpk')
+                callback = (data) ->
+                    td.html(data.body)
+                Dajaxice.products.get_less_detail(callback, params)
 
 
     view_list = [
