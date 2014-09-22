@@ -18,6 +18,32 @@ a:hover {
     text-decoration: underline;
 }
 
+.btn {
+    padding: 5px 10px;
+    border: 1px solid #E7E7E7;
+    border-radius: 5px;
+    display: inline-block;
+    color: black;
+}
+
+.btn:hover {
+    text-decoration: none;
+    background-color: #F8F8F8;
+}
+
+.btn-primary {
+    background-color: #428bca;
+    border-color: #357ebd;
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: #3276b1;
+    border-color: #285e8e;
+    color: white;
+}
+
+
 /* Start layout style */
 
 .layout {
@@ -225,6 +251,43 @@ a:hover {
 }
 
 /* End compare table */
+
+
+/* Start edit table */
+
+.edit-table  {
+    border-spacing: 0;
+    border-collapse: collapse;
+}
+
+.edit-table  th {
+    border: 1px solid #E7E7E7;
+    background-color: #F8F8F8;
+    vertical-align: top;
+    padding: 10px;
+}
+
+.edit-table td {
+    border: 1px solid #E7E7E7;
+    vertical-align: middle;
+    padding: 10px;
+}
+
+.edit-table .shop-address {
+    font-size: 10px;
+    font-weight: normal;
+}
+
+.edit-table .price {
+    width: 70px;
+}
+
+.edit-controls {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+/* End edit table */
 
 
 /* Start less compare tables */
