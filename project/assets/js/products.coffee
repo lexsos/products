@@ -65,15 +65,41 @@ $(document).ready =>
 
 
     class CompareTableView extends CategoryView
-    
+
         ajax_function: (callback, params) ->
             Dajaxice.products.get_compare_table(callback, params)
 
 
     class EditTableView extends CategoryView
-    
+
         ajax_function: (callback, params) ->
             Dajaxice.products.get_edit_table(callback, params)
+
+        after_load: (self) ->
+            $('#edit-tables-seve-btn').click ->
+                self.on_save(self, $(this))
+            $('.edit-table .price').change ->
+                self.on_change(self, $(this))
+
+        on_change: (self, element) ->
+            element.attr('edited', 'True')
+
+        on_save: (self, element) ->
+            cost_list = []
+            $('.edit-table .price').each (index) ->
+                edit_ctl = $(this)
+                if edit_ctl.attr('edited') == 'True'
+                    price =
+                        price: edit_ctl.val()
+                        product_pk: edit_ctl.attr('product_pk')
+                        shop_pk: edit_ctl.attr('shop_pk')
+                    cost_list.push(price)
+                edit_ctl.attr('edited', 'False')
+            params =
+                cost_list: cost_list
+            callback = (data) ->
+                alert data.message
+            Dajaxice.products.save_price_list(callback, params)
 
 
     class LessCompareView extends CategoryView

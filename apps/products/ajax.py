@@ -72,3 +72,23 @@ def set_price(request, price, product_pk, shop_pk):
     )
     cost.price = price
     cost.save()
+
+
+@dajaxice_register
+def save_price_list(request, cost_list):
+
+    if not (request.user.is_authenticated() and request.user.is_superuser):
+        return simplejson.dumps({'message': 'Need auth'})
+
+    for new_cost in cost_list:
+        price = new_cost['price'].replace(',', '.')
+        product = get_object_or_404(Product, pk=new_cost['product_pk'])
+        shop = get_object_or_404(Shop, pk=new_cost['shop_pk'])
+        cost, created = Cost.objects.get_or_create(
+            product=product,
+            shop=shop,
+            defaults={'price': price},
+        )
+        cost.price = price
+        cost.save()
+    return simplejson.dumps({'message': 'Save is successfully'})
