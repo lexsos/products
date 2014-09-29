@@ -230,6 +230,8 @@ a:hover {
 .compare-table .shop-address {
     font-size: 10px;
     font-weight: normal;
+    margin: 0;
+    padding: 0;
 }
 
 .compare-table .right-border-strong {

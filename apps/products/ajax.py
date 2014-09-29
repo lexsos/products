@@ -61,20 +61,6 @@ def get_edit_table(request, category_pk):
 
 
 @dajaxice_register
-def set_price(request, price, product_pk, shop_pk):
-    price = price.replace(',', '.')
-    product = get_object_or_404(Product, pk=product_pk)
-    shop = get_object_or_404(Shop, pk=shop_pk)
-    cost, created = Cost.objects.get_or_create(
-        product=product,
-        shop=shop,
-        defaults={'price': price},
-    )
-    cost.price = price
-    cost.save()
-
-
-@dajaxice_register
 def save_price_list(request, cost_list):
 
     if not (request.user.is_authenticated() and request.user.is_superuser):

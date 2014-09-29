@@ -8,4 +8,4 @@ class MainPageView(RedirectView):
     query_string = True
 
     def get_redirect_url(self):
-        return reverse('products')
+        return '/tmpl/base.html'
