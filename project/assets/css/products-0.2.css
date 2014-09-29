@@ -280,6 +280,8 @@ a:hover {
 
 .edit-table .price {
     width: 70px;
+    text-align: right;
+    padding-right: 5px;
 }
 
 .edit-controls {

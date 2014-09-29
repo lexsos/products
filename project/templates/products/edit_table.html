@@ -22,7 +22,7 @@
                   <input
                     type="text"
                     class="price"
-                    value="{% if price.price %}{{ price.price }}{% endif %}"
+                    value="{% if price.price %}{{ price.price|floatformat:2 }}{% endif %}"
                     product_pk="{{ price.product_pk }}"
                     shop_pk="{{ price.shop_pk }}"
                     edited="False"
