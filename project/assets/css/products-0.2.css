@@ -250,6 +250,14 @@ a:hover {
     background-color: #F8F8F8;
 }
 
+.compare-table .show-address {
+    font-size: 10px;
+}
+
+.compare-table .hiden {
+    display: none;
+}
+
 /* End compare table */
 
 

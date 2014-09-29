@@ -69,6 +69,10 @@ $(document).ready =>
         ajax_function: (callback, params) ->
             Dajaxice.products.get_compare_table(callback, params)
 
+        after_load: (self) ->
+            $('.compare-table .show-address').click ->
+                $('.compare-table .shop-address').toggleClass('hiden')
+
 
     class EditTableView extends CategoryView
 
