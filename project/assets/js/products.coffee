@@ -118,8 +118,8 @@ $(document).ready =>
         detail_click: (self, a_element) ->
             tr_id = a_element.attr('tr')
             tr = $(tr_id)
-            tr.toggleClass('hide')
-            if not tr.hasClass('hide')
+            tr.toggleClass('hiden')
+            if not tr.hasClass('hiden')
                 td = tr.find('td')
                 params =
                     product_pk: a_element.attr('productpk')
@@ -127,6 +127,16 @@ $(document).ready =>
                     td.html(data.body)
                 Dajaxice.products.get_less_detail(callback, params)
 
+            detail_count = 0
+            $('.less-cmp-table .detail').each (index) ->
+                if not $(this).hasClass('hiden')
+                    detail_count += 1
+            if detail_count
+                $('.less-cmp-table .coll-min').addClass('hiden')
+                $('.less-cmp-table .coll-max').addClass('hiden')
+            else
+                $('.less-cmp-table .coll-min').removeClass('hiden')
+                $('.less-cmp-table .coll-max').removeClass('hiden')
 
     view_list = [
         {

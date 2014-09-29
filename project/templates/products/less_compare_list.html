@@ -3,8 +3,8 @@
   <thead>
     <tr>
       <th>Наименование</th>
-      <th>Минимальная цена</th>
-      <th>Максимальная цена</th>
+      <th class="coll-min">Минимальная цена</th>
+      <th class="coll-max">Максимальная цена</th>
     </tr>
   </thead>
 
@@ -18,14 +18,14 @@
             <a href="#" class="show-product-detail" tr="#less-tr-detail-{{ product.pk }}" productpk="{{ product.pk }}">Подробнее</a>
           </p>
         </td>
-        <td class="min">
+        <td class="min coll-min">
           <div class="shop">
             <p class="shop-name">{{ product.get_min_cost.shop.title }}</p>
             <p class="shop-address">{{ product.get_min_cost.shop.address }}</p>
           </div>
           <div class="cost">{{ product.get_min_cost.price }}</div>
         </td>
-        <td class="max">
+        <td class="max coll-max">
           <div class="shop">
             <p class="shop-name">{{ product.get_max_cost.shop.title }}</p>
             <p class="shop-address">{{ product.get_max_cost.shop.address }}</p>
@@ -34,7 +34,7 @@
         </td>
       </tr>
 
-      <tr class="detail hide" id="less-tr-detail-{{ product.pk }}">
+      <tr class="detail hiden" id="less-tr-detail-{{ product.pk }}">
         <td colspan="3"></td>
       </tr>
 
