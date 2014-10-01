@@ -2,6 +2,7 @@ from django.utils import simplejson
 from dajaxice.decorators import dajaxice_register
 from django.template.loader import render_to_string
 from django.shortcuts import get_object_or_404
+from django.utils.translation import ugettext_lazy as _
 
 from .utils import getCategoryJson, getProductsCompare
 from .models import Shop, Category, Cost, Product
@@ -64,7 +65,8 @@ def get_edit_table(request, category_pk):
 def save_price_list(request, cost_list):
 
     if not (request.user.is_authenticated() and request.user.is_superuser):
-        return simplejson.dumps({'message': 'Need auth'})
+        message = unicode(_('Need auth'))
+        return simplejson.dumps({'message': message})
 
     for new_cost in cost_list:
         price = new_cost['price'].replace(',', '.')
@@ -77,4 +79,6 @@ def save_price_list(request, cost_list):
         )
         cost.price = price
         cost.save()
-    return simplejson.dumps({'message': 'Save is successfully'})
+
+    message = unicode(_('Save is successfully'))
+    return simplejson.dumps({'message': message})

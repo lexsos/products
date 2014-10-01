@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-09-04 07:37+0400\n"
+"POT-Creation-Date: 2014-10-01 07:46+0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,31 +19,39 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
 "%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
+#: ajax.py:68
+msgid "Need auth"
+msgstr "Необходима авторизация"
+
+#: ajax.py:81
+msgid "Save is successfully"
+msgstr "Сохранение завершено успешно"
+
 #: models.py:12
 msgid "parent"
 msgstr "родитель"
 
-#: models.py:16 models.py:42 models.py:76
+#: models.py:16 models.py:47 models.py:81
 msgid "title"
 msgstr "заголовок"
 
-#: models.py:20 models.py:50 models.py:84
+#: models.py:20 models.py:55 models.py:89
 msgid "weight"
 msgstr "вес"
 
-#: models.py:22 models.py:52 models.py:86
+#: models.py:22 models.py:57 models.py:91
 msgid "Rocord will be first with greate weight."
 msgstr "Запись с большим весом будет первой"
 
-#: models.py:25 models.py:55 models.py:89
+#: models.py:25 models.py:60 models.py:94
 msgid "enabled"
 msgstr "включено"
 
-#: models.py:27 models.py:57 models.py:91
+#: models.py:27 models.py:62 models.py:96
 msgid "show/hide"
 msgstr "показать/скрыть"
 
-#: models.py:31 models.py:81
+#: models.py:31 models.py:86
 msgid "category item"
 msgstr "категория"
 
@@ -51,38 +59,38 @@ msgstr "категория"
 msgid "category items"
 msgstr "категории"
 
-#: models.py:46
+#: models.py:51
 msgid "address"
 msgstr "адрес"
 
-#: models.py:60
+#: models.py:65
 msgid "additional info"
 msgstr "добавочная информация"
 
-#: models.py:65 models.py:111
+#: models.py:70 models.py:128
 msgid "shop item"
 msgstr "магазин"
 
-#: models.py:66
+#: models.py:71
 msgid "shop items"
 msgstr "магазины"
 
-#: models.py:95 models.py:107
+#: models.py:100 models.py:124
 msgid "product item"
 msgstr "продукт"
 
-#: models.py:96
+#: models.py:101
 msgid "product items"
 msgstr "продукты"
 
-#: models.py:114
+#: models.py:131
 msgid "price"
 msgstr "цена"
 
-#: models.py:118
+#: models.py:135
 msgid "cost item"
 msgstr "цена"
 
-#: models.py:119
+#: models.py:136
 msgid "cost items"
 msgstr "цены"
